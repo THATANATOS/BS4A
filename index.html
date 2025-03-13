@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATCH 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#photo-card">PHOTO CARD</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#about">ABOUT</a></li>
+            </ul>
+        </nav>
+        <div class="background-image"></div>
+    </header>
+    <main>
+        <section class="about">
+            <h2>BSIT 4-A</h2>
+            <p>Welcome to the BSIT 4-A section. We are a group of dedicated Information Technology students committed to excellence in 
+                our studies and projects. Our mission is to leverage our skills and knowledge to develop innovative solutions and contribute 
+                positively to the tech community. We strive to collaborate effectively, learn continuously, and exceed expectations in all our endeavors.</p>
+        </section>
+    
+    <main>
+        <section class="card-container">
+            <!-- Card 1 -->
+            <div class="card" onclick="openModal('aw ambot ', 'This is a description for card 1.', ['/image/p5.jpg', '/image/p4.jpg', '/image/p6.jpg' ,'/image/11.jpg','/image/12.jpg'
+                ,'/image/13.jpg','/image/18.jpg','/image/19.jpg','/image/17.jpg'
+            ],  )">
+                <img src="/image/p1.jpg" alt="Card Image 1">
+                <div class="card-title">MWAAA</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" onclick="openModal('wews', 'This is a description for card 2.', ['/image/1.jpg', '/image/2.jpg', '/image/3.jpg',  '/image/4.jpg' ,  '/image/5.jpg'
+                ,  '/image/6.jpg' ,  '/image/7.jpg',  '/image/8.jpg',  '/image/9.jpg' ,  '/image/10.jpg', ])">
+                <img src="/image/p4.jpg" alt="Card Image 2">
+                <div class="card-title">Card Title 2</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" onclick="openModal('Card Title 3', 'This is a description for card 3.', ['/image/l1.jpg', '/image7/l2.jpg', '/image/l3.jpg' , '/image/l4.jpg', '/image/l5.jpg'
+                , '/image/l6.jpg', '/image/l7.jpg', '/image/l8.jpg', '/image/l9.jpg', '/image/l10.jpg', '/image/l11.jpg', '/image/l12.jpg', '/image/l13.jpg', ])">
+               
+               <img src="/image/p10.jpg" alt="Card Image 3">
+                <div class="card-title">Card Title 3</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card" onclick="openModal('Card Title 4', 'This is a description for card 4.', ['/image6.jpg', '/image7.jpg', '/image8.jpg'])">
+                <img src="/image/p10.jpg" alt="Card Image 4">
+                <div class="card-title">Card Title 4</div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card" onclick="openModal('Card Title 5', 'This is a description for card 5.', ['/image6.jpg', '/image7.jpg', '/image8.jpg'])">
+                <img src="/image/p10.jpg" alt="Card Image 5">
+                <div class="card-title">Card Title 5</div>
+            </div>
+
+             <!-- Card 5 -->
+             <div class="card" onclick="openModal('Card Title 5', 'This is a description for card 5.', ['/image6.jpg', '/image7.jpg', '/image8.jpg'])">
+                <img src="/image/p10.jpg" alt="Card Image 5">
+                <div class="card-title">Card Title 5</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Card Title</h2>
+            <p id="modal-description">Card description goes here.</p>
+            <div id="modal-images" class="modal-images">
+                <!-- Images will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+  
+
+     <!--- <section class="get-in-touch">
+        <h2>Get in Touch</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+---->
+
+
+
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p>We are a company dedicated to providing the best services and products to our customers.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: info@example.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>
+                <a href="#">Facebook</a> | 
+                <a href="#">Twitter</a> | 
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+    </div>
+    <p>&copy; 2025 Your Website. All Rights Reserved.</p>
+</footer>
+    <script>
+        function openModal(title, description, images) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-description').textContent = description;
+
+            const modalImages = document.getElementById('modal-images');
+            modalImages.innerHTML = '';
+
+            images.forEach(imageSrc => {
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = title;
+                modalImages.appendChild(img);
+            });
+
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        
+
+// Get the modal element and close button
+const modal = document.querySelector('.modal');
+const closeButton = document.querySelector('.close-btn');
+
+// Function to close the modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Event listener for the close button
+closeButton.addEventListener('click', closeModal);
+
+// Event listener for the ESC key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') { // Check if the key pressed is ESC
+        closeModal();
+    }
+});
+
+        
+    </script>
+</body>
+</html>
